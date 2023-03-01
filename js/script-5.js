@@ -1,39 +1,42 @@
-let countryDelivery = prompt('вкажіть країну доставки').toLowerCase();
+// # Завдання 5
 
-let country;
-let price;
+// Напиши функцію `checkForSpam(message)`, приймаючу 1 параметр `message` - рядок.
+// Функція перевіряє її на вміст слів `spam` і `sale`. Якщо знайшли заборонене
+// слово, то функція повертає `true`, якщо заборонених слів немає функція повертає
+// `false`. Слова в рядку можуть бути в довільному регістрі.
 
-switch (countryDelivery.toLowerCase()) {
-  case 'китай':
-    country = 'Китай';
-    price = 100;
-    console.log(`Доставка в ${country} буде коштувати ${price} кредитів`);
-    break;
+// ```js
+// const checkForSpam = function (message) {
+//   // твій код
+// };
 
-  case 'чилі':
-    country = 'Чилі';
-    price = 250;
-    console.log(`Доставка в ${country} буде коштувати ${price} кредитів`);
-    break;
+// /*
+//  * Викличи функції для перевірки працездатності твоєї реалізації.
+//  */
+// console.log(checkForSpam("Latest technology news")); // false
 
-  case 'австралія':
-    country = 'Австралія';
-    price = 170;
-    console.log(`Доставка в ${country} буде коштувати ${price} кредитів`);
-    break;
+// console.log(checkForSpam("JavaScript weekly newsletter")); // false
 
-  case 'індія':
-    country = 'Індія';
-    price = 80;
-    console.log(`Доставка в ${country} буде коштувати ${price} кредитів`);
-    break;
+// console.log(checkForSpam("Get best sale offers now!")); // true
 
-  case 'ямайка':
-    country = 'Ямайка';
-    price = 120;
-    console.log(`Доставка в ${country} буде коштувати ${price} кредитів`);
-    break;
+// console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
+// ```
 
-  default:
-    alert('У вашій країні доставка недоступна!');
-}
+const checkForSpam = function (message) {
+  let check;
+  const letter = message.toLowerCase();
+  if (letter.includes('spam') || letter.includes('sale')) {
+    check = 'true';
+  } else {
+    check = 'false';
+  }
+  return check;
+};
+
+console.log(checkForSpam('Latest technology news'));
+
+console.log(checkForSpam('JavaScript weekly newsletter'));
+
+console.log(checkForSpam('Get best sale offers now!'));
+
+console.log(checkForSpam('[SPAM] How to earn fast money?'));
