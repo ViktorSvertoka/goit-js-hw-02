@@ -1,14 +1,41 @@
-const ADMIN_PASSWORD = 'jqueryismyjam';
+// # Завдання 3
 
-let message;
+// Напиши функцію `findLongestWord(string)`, яка приймає параметром довільний рядок
+// (в рядку будуть тільки слова і прогалини) і повертає найдовше слово в цьому
+// рядку.
 
-let password = prompt('Введіть пароль');
+// ```js
+// const findLongestWord = function (string) {
+//   // твій код
+// };
 
-if (password === null) {
-  message = 'Скасовано користувачем!';
-} else if (password === ADMIN_PASSWORD) {
-  message = 'Ласкаво просимо!';
-} else {
-  message = 'Доступ заборонений, невірний пароль!';
-}
-alert(message);
+// /*
+//  * Виклич функції для перевірки працездатності твоєї реалізації.
+//  */
+// console.log(findLongestWord("The quick brown fox jumped over the lazy dog")); // 'jumped'
+
+// console.log(findLongestWord("Google do a roll")); // 'Google'
+
+// console.log(findLongestWord("May the force be with you")); // 'force'
+// ```
+
+const findLongestWord = function (string) {
+  const array = string.split(' ');
+  console.log(array);
+
+  let longesWord = array[0];
+
+  for (let i = 0; i < array.length; i += 1) {
+    if (longesWord.length < array[i].length) {
+      longesWord = array[i];
+    }
+  }
+
+  return longesWord;
+};
+
+console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
+
+console.log(findLongestWord('Google do a roll'));
+
+console.log(findLongestWord('May the force be with you'));
